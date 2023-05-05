@@ -68,3 +68,49 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<!-- fetures folder stracture for apps -->
+
+src/
+|-- assets/
+| |-- images/
+| | |-- product1.jpg
+| | |-- product2.jpg
+| | `-- ...
+|   `-- ...
+|-- components/
+| |-- common/
+| | |-- Button.js
+| | |-- Input.js
+| | `-- ...
+|   |-- Layout/
+|   |   |-- Footer.js
+|   |   |-- Header.js
+|   |   `-- ...
+| |-- Product/
+| | |-- ProductCard.js
+| | |-- ProductList.js
+| | `-- ...
+|   `-- ...
+|-- pages/
+| |-- Home/
+| | |-- Home.js
+| | `-- ...
+|   |-- Products/
+|   |   |-- Product.js
+|   |   |-- Products.js
+|   |   `-- ...
+| |-- Cart/
+| | |-- Cart.js
+| | `-- ...
+|   `-- ...
+|-- services/
+| |-- api.js
+| |-- auth.js
+| `-- ...
+|-- utils/
+|   |-- constants.js
+|   |-- helpers.js
+|   `-- ...
+|-- App.js
+`-- index.js
