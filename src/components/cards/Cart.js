@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 import { Cartcontext } from '../../context/CartContext';
+import Button from '../common/Button';
 
-function Cart() {
+const Cart = () => {
 
     const { cartItems, updateCartItemQuantity, removeItemFromCart, totalPrice } = useContext(Cartcontext);
 
@@ -20,13 +21,13 @@ function Cart() {
                                 </div>
                             </div>
                             <div className="flex items-center">
-                                <button onClick={() => removeItemFromCart(item)} className="px-2 py-1 border border-gray-300 rounded-md mr-2">
+                                <Button onClick={() => removeItemFromCart(item)} className="px-2 py-1 border border-gray-300 rounded-md mr-2">
                                     -
-                                </button>
+                                </Button>
                                 <span className="font-bold mr-2">01</span>
-                                <button onClick={() => updateCartItemQuantity(item.id)} className="px-2 py-1 border border-gray-300 rounded-md">
+                                <Button onClick={() => updateCartItemQuantity(item.id)} className="px-2 py-1 border border-gray-300 rounded-md">
                                     +
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     ))}

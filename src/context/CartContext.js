@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 export const Cartcontext = createContext({
     cartItems: [],
@@ -20,7 +21,7 @@ export const Context = (props) => {
         const findItem = cartItems.find((cartItems) => cartItems.id === itemId);
         const chnageId = {
             ...findItem,
-            id: Math.random(),
+            id: uuidv4(),
         };
         setCartItems([...cartItems, chnageId]);
         setTotalPrice(totalPrice + chnageId.price);

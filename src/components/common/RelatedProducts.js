@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 const RelatedProducts = (props) => {
     console.log(props);
     const { image, title, description } = props.relatedProd;
@@ -11,9 +13,9 @@ const RelatedProducts = (props) => {
                     <p className="text-gray-500 mb-4">
                         {description}
                     </p>
-                    <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full">
+                    <Button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full">
                         Buy Now
-                    </button>
+                    </Button>
                 </div>
             </div>
         </section>
