@@ -7,45 +7,42 @@ export const Cartcontext = createContext({
     totalPrice: 0,
 });
 
-export const useCart = () => {
-    return useContext(Cartcontext);
-};
-
 export const Context = (props) => {
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
 
-
-    const increaseItem = (item) => {
-        console.log(item);
-        const itemIndex = cartItems.findIndex((cartItem) => cartItem.id === item.id);
-        console.log(cartItems)
-        
-        if (itemIndex === -1) {
-            setCartItems([...cartItems, { ...item, quantity: 1 }]);
-        } else {
-            const newCartItems = [...cartItems];
-            newCartItems[itemIndex].quantity++;
-            setCartItems(newCartItems);
-        }
-        setTotalPrice(totalPrice + item.price);
-    }
-
-
-    const decreaseItem = (item) => {
-        const itemIndex = cartItems.findIndex((cartItem) => cartItem.id === item.id);
-        if (itemIndex !== -1) {
-            const newCartItems = [...cartItems];
-            newCartItems[itemIndex].quantity--;
-            if (newCartItems[itemIndex].quantity === 0) {
-                newCartItems.splice(itemIndex, 1);
-            }
-            setCartItems(newCartItems);
-            setTotalPrice(totalPrice - item.price);
-        }
+    const addItemToCart = (item) => {
+        setCartItems([...cartItems, item]);
     };
+
+    const updateCartItemQuantity = (itemId) => {
+
+        const findItem = cartItems.find((cartItems) => cartItems.id === itemId);
+        const chnageId = {
+            ...findItem,
+            id: Math.random()
+        }
+        setCartItems([...cartItems, chnageId])
+    };
+
+    const removeItemFromCart = (itemId) => {
+        const updatedCartItems = cartItems.filter(
+            (cartItem) => cartItem.id !== itemId
+        );
+        setCartItems(updatedCartItems);
+    };
+
     return (
-        <Cartcontext.Provider value={{ cartItems, increaseItem, decreaseItem, totalPrice }}>{props.children}</Cartcontext.Provider>
+        <Cartcontext.Provider
+            value={{
+                cartItems,
+                addItemToCart,
+                updateCartItemQuantity,
+                removeItemFromCart,
+                totalPrice,
+            }}
+        >
+            {props.children}
+        </Cartcontext.Provider>
     );
 };
-

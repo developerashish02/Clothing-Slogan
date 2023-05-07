@@ -4,7 +4,7 @@ import { Cartcontext } from '../../context/CartContext';
 
 function Cart() {
 
-    const { cartItems, increaseItem, decreaseItem, totalPrice } = useContext(Cartcontext);
+    const { cartItems, addItemToCart, updateCartItemQuantity, removeItemFromCart, totalPrice } = useContext(Cartcontext);
 
     return (
         <div className="w-full max-w-3xl mx-auto p-4">
@@ -21,11 +21,11 @@ function Cart() {
                                 </div>
                             </div>
                             <div className="flex items-center">
-                                <button onClick={() => decreaseItem(item?.id)} className="px-2 py-1 border border-gray-300 rounded-md mr-2">
+                                <button onClick={() => removeItemFromCart(item.id)} className="px-2 py-1 border border-gray-300 rounded-md mr-2">
                                     -
                                 </button>
                                 <span className="font-bold mr-2">200</span>
-                                <button onClick={() => increaseItem(item?.id)} className="px-2 py-1 border border-gray-300 rounded-md">
+                                <button onClick={() => updateCartItemQuantity(item.id)} className="px-2 py-1 border border-gray-300 rounded-md">
                                     +
                                 </button>
                             </div>

@@ -7,7 +7,8 @@ const CardDetail = () => {
     const [productDetail, seProductDetail] = useState({});
     const { id } = useParams();
     const { title, image, description, price, } = productDetail;
-    const { cartItems, increaseItem, decreaseItem, totalPrice } = useContext(Cartcontext);
+    const { addItemToCart } = useContext(Cartcontext);
+
 
 
     useEffect(() => {
@@ -16,7 +17,7 @@ const CardDetail = () => {
     }, [id])
 
     const handleAddCart = () => {
-        increaseItem(productDetail); 
+        addItemToCart(productDetail);
     }
 
     return <div className="container mx-auto px-4 py-4">
