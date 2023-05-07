@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Cartcontext } from "../../context/CartContext";
+import Button from "../common/Button";
 
 const Header = () => {
+    const { cartItems } = useContext(Cartcontext);
     return <header className="bg-white">
         <nav className="flex justify-between items-center w-[92%]  mx-auto">
             <div>
@@ -9,7 +13,7 @@ const Header = () => {
 
             <div className="flex items-center gap-6">
                 <Link to={"/cart"}>
-                    <button className="bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]">Cart (1)</button>
+                    <Button className="bg-lime-600 text-white px-5 py-2  hover:bg-lime-500">Cart ({cartItems.length})</Button>
                 </Link>
             </div>
         </nav >

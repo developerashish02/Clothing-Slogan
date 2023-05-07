@@ -1,3 +1,5 @@
+import Button from "../common/Button";
+
 const Card = (props) => {
     const { title, description, price, image } = props.prodData;
     const limitedDescription = description.slice(0, 50) + "...";
@@ -9,7 +11,7 @@ const Card = (props) => {
             <p className="text-gray-700 text-base"> {limitedDescription} </p>
             <div className="flex items-center justify-between mt-4">
                 <h3 className="text-gray-700 font-bold text-xl">Rs {price}</h3>
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add to cart</button>
+                <Button className="bg-zinc-800 hover:bg-zinc-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Buy Now</Button>
             </div>
         </div>
     </div>

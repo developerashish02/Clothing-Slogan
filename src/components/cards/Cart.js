@@ -1,10 +1,9 @@
-import { useContext, useState } from 'react';
-// import { CartContext } from '../../context/CartContext';
+import { useContext } from 'react';
 import { Cartcontext } from '../../context/CartContext';
 
 function Cart() {
 
-    const { cartItems, addItemToCart, updateCartItemQuantity, removeItemFromCart, totalPrice } = useContext(Cartcontext);
+    const { cartItems, updateCartItemQuantity, removeItemFromCart, totalPrice } = useContext(Cartcontext);
 
     return (
         <div className="w-full max-w-3xl mx-auto p-4">
