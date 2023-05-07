@@ -18,7 +18,7 @@ const CardContainer = () => {
 
     return (
         <>
-            <div class="flex justify-center space-x-4">
+            <div className="flex justify-center space-x-4">
 
                 <Button className="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded-lg" onClick={() => filterByCategory('mens clothing')
                 } >
@@ -33,8 +33,8 @@ const CardContainer = () => {
             <div className="container mx-auto px-4 md:px-6 lg:px-8 m-8" >
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {category?.map(product =>
-                        <Link to={"/card-detail/" + product.id}>
-                            <Card prodData={product} key={product?.id} />
+                        <Link to={"/card-detail/" + product.id} key={product?.id}>
+                            <Card prodData={product} />
                         </Link>
                     )}
                 </div>

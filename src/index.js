@@ -5,6 +5,8 @@ import App from './App';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import CardContainer from './components/cards/CardContainer';
 import CardDetail from './components/cards/CardDetail';
+import Cart from './components/cards/Cart';
+import { Context } from './context/CartContext';
 
 
 const router = createBrowserRouter([
@@ -19,14 +21,21 @@ const router = createBrowserRouter([
       {
         path: "/card-detail/:id",
         element: <CardDetail />
+      },
+      {
+        path: "/cart",
+        element: <Cart />
       }
     ]
   }
 ])
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Context>
+      <RouterProvider router={router} />
+    </Context>
   </React.StrictMode>
 );
 
