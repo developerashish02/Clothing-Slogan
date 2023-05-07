@@ -9,15 +9,17 @@ const CardDetail = () => {
     const { title, image, description, price, } = productDetail;
     const { addItemToCart } = useContext(Cartcontext);
 
-
-
     useEffect(() => {
         const product = PRODUCTS?.find((product) => product.id === +id);
         seProductDetail(product);
     }, [id])
 
     const handleAddCart = () => {
-        addItemToCart(productDetail);
+        const newProduct = {
+            ...productDetail,
+            id: Math.random(),
+        }
+        addItemToCart(newProduct);
     }
 
     return <div className="container mx-auto px-4 py-4">

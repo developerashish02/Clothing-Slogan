@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
 export const Cartcontext = createContext({
     cartItems: [],
@@ -13,21 +13,24 @@ export const Context = (props) => {
 
     const addItemToCart = (item) => {
         setCartItems([...cartItems, item]);
+        setTotalPrice(totalPrice + item.price);
     };
 
     const updateCartItemQuantity = (itemId) => {
-
         const findItem = cartItems.find((cartItems) => cartItems.id === itemId);
         const chnageId = {
             ...findItem,
-            id: Math.random()
-        }
-        setCartItems([...cartItems, chnageId])
+            id: Math.random(),
+        };
+        setCartItems([...cartItems, chnageId]);
+        setTotalPrice(totalPrice + chnageId.price);
     };
 
-    const removeItemFromCart = (itemId) => {
+    const removeItemFromCart = (item) => {
+        setTotalPrice(totalPrice - item.price);
+
         const updatedCartItems = cartItems.filter(
-            (cartItem) => cartItem.id !== itemId
+            (cartItem) => cartItem.id !== item.id
         );
         setCartItems(updatedCartItems);
     };

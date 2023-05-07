@@ -21,10 +21,10 @@ function Cart() {
                                 </div>
                             </div>
                             <div className="flex items-center">
-                                <button onClick={() => removeItemFromCart(item.id)} className="px-2 py-1 border border-gray-300 rounded-md mr-2">
+                                <button onClick={() => removeItemFromCart(item)} className="px-2 py-1 border border-gray-300 rounded-md mr-2">
                                     -
                                 </button>
-                                <span className="font-bold mr-2">200</span>
+                                <span className="font-bold mr-2">01</span>
                                 <button onClick={() => updateCartItemQuantity(item.id)} className="px-2 py-1 border border-gray-300 rounded-md">
                                     +
                                 </button>
