@@ -1,15 +1,20 @@
-
-import { Outlet } from 'react-router-dom';
-import './App.css';
-import Header from './components/Layout/Header';
+import { Outlet } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Layout/Header";
+import useIsOnline from "./utils/useIsOnline";
+import IsOnline from "./components/common/IsOnline";
 
 const App = () => {
-  return (
-    <div className="App">
-      <Header />
-      <Outlet />
-    </div>
-  );
-}
+	const isOnline = useIsOnline();
+
+	return !isOnline ? (
+		<IsOnline />
+	) : (
+		<div className="App">
+			<Header />
+			<Outlet />
+		</div>
+	);
+};
 
 export default App;
