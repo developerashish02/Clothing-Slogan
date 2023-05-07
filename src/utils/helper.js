@@ -1,9 +1,1 @@
-import PRODUCTS from "./mockData";
-
-export const filter = (filterText) => {
-    const filter = PRODUCTS.filter((products) => {
-        return products.category.toLowerCase().includes(filterText.toLowerCase());
-    })
-
-    return filter;
-}
+export const LOGO = "https://png.pngtree.com/template/20190928/ourmid/pngtree-orange-fashion-women-boutique-clothing-beautiful-logo-design-tem-image_312092.jpg" 
