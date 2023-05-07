@@ -10,7 +10,9 @@ const Header = () => {
         <header className="shadow-md bg-white rounded-md p-4">
             <nav className="flex justify-between items-center w-[92%]  mx-auto ">
                 <div>
-                    <img className="w-24 cursor-pointer" src={LOGO} alt="compnay logo" />
+                    <Link to={"/"}>
+                        <img className="w-24 cursor-pointer" src={LOGO} alt="compnay logo" />
+                    </Link>
                 </div>
 
                 <div className="flex items-center gap-6">

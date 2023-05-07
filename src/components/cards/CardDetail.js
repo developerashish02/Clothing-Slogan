@@ -4,9 +4,13 @@ import { useContext, useEffect, useState } from "react";
 import { Cartcontext } from "../../context/CartContext";
 import Button from "../common/Button";
 import Reviews from "../common/Reviews";
+import useRelatedProducts from "../../utils/useRelatedProducts";
+import RelatedProducts from "../common/RelatedProducts";
+import Card from "./Card";
 
 const CardDetail = () => {
     const [productDetail, seProductDetail] = useState({});
+    const relatedProducts = useRelatedProducts(productDetail);
     const { id } = useParams();
     const { title, image, description, price } = productDetail;
     const { addItemToCart } = useContext(Cartcontext);
@@ -53,13 +57,31 @@ const CardDetail = () => {
                 </div>
             </div>
 
-            {/*  customer reviews */}
-            <div className="my-5">
+            {/* Related Products */}
+            <div className="my-5 ml-4">
                 <hr className="my-8 border-b-2 border-gray-300" />
-                <h2 className="text-4xl font-bold mb-4 text-green-500 text-center ">Customer Reviews</h2>
+                <h2 className="text-4xl font-bold mb-4 text-green-500 text-center ">
+                    Releted Products
+                </h2>
+
+                <div className="flex gap-2 mt-5 flex-wrap">
+                    {relatedProducts?.map((product) => (
+                        <Link to={"/card-detail/" + product.id}>
+                            <Card prodData={product} key={product?.id} />
+                        </Link>
+                    ))}
+                </div>
+            </div>
+
+            {/*  customer reviews */}
+            <div className="my-5 ml-4">
+                <hr className="my-8 border-b-2 border-gray-300" />
+                <h2 className="text-4xl font-bold mb-4 text-green-500 text-center ">
+                    Customer Reviews
+                </h2>
                 <div className="flex gap-4 mt-5 flex-wrap">
                     {productDetail?.reviews?.map((product) => {
-                        return <Reviews reviewsData={product} />
+                        return <Reviews reviewsData={product} key={product?.id} />;
                     })}
                 </div>
             </div>

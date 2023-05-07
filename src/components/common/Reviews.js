@@ -2,21 +2,21 @@ const Reviews = (props) => {
 	const { name, rating, comment, date, profileImg } = props.reviewsData;
 	console.log(props);
 	return (
-		<div class="bg-white p-4 rounded-md shadow-md">
-			<div class="flex items-center mb-4">
-				<div class="w-12 h-12 rounded-full bg-gray-200">
-					<img src={profileImg} alt="avtar" />
+		<div className="bg-white p-4 rounded-md shadow-md">
+			<div className="flex items-center mb-4">
+				<div className="w-12 h-12 rounded-full bg-gray-200">
+					<img src={profileImg} alt="avtar" className="rounded-full" />
 				</div>
-				<div class="ml-4">
-					<h2 class="text-lg font-bold">{name}</h2>
-					<p class="text-gray-600">{date}</p>
+				<div className="ml-4">
+					<h2 className="text-lg font-bold">{name}</h2>
+					<p className="text-gray-600">{date}</p>
 				</div>
 			</div>
-			<div class="flex items-center">
-				<div class="flex justify-center items-center mr-4 w-8 h-8 rounded-full bg-green-500 text-white font-bold text-lg">
+			<div className="flex items-center">
+				<div className="flex justify-center items-center mr-4 w-8 h-8 rounded-full bg-green-500 text-white font-bold text-lg">
 					{rating}
 				</div>
-				<p class="text-gray-800">{comment}</p>
+				<p className="text-gray-800">{comment}</p>
 			</div>
 		</div>
 	);
