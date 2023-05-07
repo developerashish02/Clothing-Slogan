@@ -4,7 +4,7 @@ const Card = (props) => {
     const { title, description, price, image } = props.prodData;
     const limitedDescription = description.slice(0, 50) + "...";
 
-    return <div className="bg-white shadow-lg rounded-lg overflow-hidden h-auto w-72" >
+    return <div className="bg-white shadow-lg rounded-lg overflow-hidden h-auto w-72 " >
         <img className="w-full h-48 object-contain" src={image} alt="Shopping item" />
         <div className="p-4">
             <h2 className="text-gray-900 font-bold text-xl mb-2">{title}</h2>

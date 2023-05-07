@@ -83,7 +83,7 @@ const CardDetail = () => {
                 </div>
             </div>
         </div>
-    );
+    );  
 };
 
 export default CardDetail;
