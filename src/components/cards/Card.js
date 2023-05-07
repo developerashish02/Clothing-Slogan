@@ -10,7 +10,7 @@ const Card = (props) => {
             <h2 className="text-gray-900 font-bold text-xl mb-2">{title}</h2>
             <p className="text-gray-700 text-base"> {limitedDescription} </p>
             <div className="flex items-center justify-between mt-4">
-                <h3 className="text-gray-700 font-bold text-xl">Rs {price * 75}</h3>
+                <h3 className="text-gray-700 font-bold text-xl">Rs {price}</h3>
                 <Button className="bg-zinc-800 hover:bg-zinc-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Buy Now</Button>
             </div>
         </div>
