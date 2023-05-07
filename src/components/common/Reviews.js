@@ -1,6 +1,6 @@
 const Reviews = (props) => {
 	const { name, rating, comment, date, profileImg } = props.reviewsData;
-	console.log(props);
+
 	return (
 		<div className="bg-white p-4 rounded-md shadow-md">
 			<div className="flex items-center mb-4">
