@@ -5,7 +5,6 @@ import { Cartcontext } from "../../context/CartContext";
 import Button from "../common/Button";
 import Reviews from "../common/Reviews";
 import useRelatedProducts from "../../utils/useRelatedProducts";
-import RelatedProducts from "../common/RelatedProducts";
 import Card from "./Card";
 
 const CardDetail = () => {
